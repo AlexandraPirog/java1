@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+// Task_1.
+// Создайте массив, в котором будут храниться кубы чисел от 1 до 1000. 
+//Затем вводятся 2 числа из этого диапазона. Используя данные из массива найдите их кубы.
+
+// Sample Input:
+
+// 8
+// 11
+// Sample Output:
+
+// 512
+// 1331
+
+public class program {
+public class Main {
+    public static int pow(int n, int k){
+        if (k == 1){
+            return n;
+        }
+        else{
+            return n*(pow(n, k-1));
+        }
+    }
+    public static void main(String[] args) {
+        int[] nums = new int[1000];
+        int n = 1;
+        int k = 3;
+        for (int i = 0; i<= nums.length-1; i++){
+            nums[i] = pow(n, k);
+            n++;
+        }
+        //System.out.println(java.util.Arrays.toString(nums));
+
+        Scanner iScanner = new Scanner(System.in);
+        System.out.println("введите число m: ");
+        int m = iScanner.nextInt();
+        int i = m - 1;
+        System.out.println(nums[i]);
+
+        System.out.println("введите число g: ");
+        int g = iScanner.nextInt();
+        int j = g - 1;
+        System.out.println(nums[j]);
+    }
+}
+}
